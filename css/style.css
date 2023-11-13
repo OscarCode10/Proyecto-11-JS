@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --1:white;
+    --2:black;
+    --3:rgb(66, 167, 66);
+    --4:rgb(98, 206, 98);
+    --5:#4c2882;
+    --6:#6736b1;
+    --7:rgb(65, 65, 65);
+    --8:#7a3fd2;
+    --9:#a569ff;
+    --10:rgb(156, 255, 156);
+}
+
+body{
+    background-color: var(--5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: .5s;
+    &.toogleGreen{
+        background-color: var(--3);
+    }
+}
+
+#toggle{
+    height: 10rem;
+    width: 20rem;
+    background-color: var(--6);
+    box-shadow: inset 0 .5rem 4rem rgba(0, 0, 0, .1),
+                inset 0 .5rem 4rem rgba(0, 0, 0, .1),
+                inset 0 .5rem 4rem rgba(0, 0, 0, .1);
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+    appearance: none;
+    border-radius: 10rem;
+    &.toggleGreen{
+        background-color: var(--3);
+        box-shadow: inset 0 .5rem 4rem rgba(0, 0, 0, .1),
+                    inset 0 .5rem 4rem rgba(0, 0, 0, .1),
+                    inset 0 .5rem 4rem rgba(0, 0, 0, .1);
+
+        .circle{
+            left: 10rem;
+            background: linear-gradient(to bottom, var(--4), var(--4));
+            box-shadow: 0 .5rem 2.5rem rgba(142, 43, 195, .9),
+                        inset .2rem .2rem var(--10),
+                        inset .2rem .2rem var(--10);
+        }
+    }
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    height: 10rem;
+    content: "";
+    background: linear-gradient(to bottom, var(--8), var(--8));
+    border-radius: 50vh;
+    transform: scale(.9);
+    transition: .5s;
+    box-shadow: 0 .5rem 2.5rem rgba(0, 255, 30, .5),
+                inset .2rem .2rem var(--9),
+                inset .2rem .2rem var(--9);
+}
+
+body.toggleGreen{
+    background-color: var(--3);
+}
+
